@@ -10,6 +10,7 @@ build:
   - concat
   - ngAnnotate
   - copy:dist
+  - haml
   # - cdnify
   - cssmin
   - uglify

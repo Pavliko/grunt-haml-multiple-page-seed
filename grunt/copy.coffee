@@ -9,7 +9,7 @@ module.exports =
           '*.{ico,png,txt}'
           '.htaccess'
           '*.html'
-          'views/{,*/}*.html'
+          # 'views/{,*/}*.html.haml'
           'images/{,*/}*.{webp}'
           'fonts/*'
         ]
