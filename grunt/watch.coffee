@@ -14,6 +14,11 @@ module.exports =
     tasks: ['libsass', 'newer:copy:styles', 'autoprefixer']
     options:
       livereload: true
+  haml:
+    files: ['<%= yeoman.app %>/**/*.haml']
+    tasks: ['haml']
+    options:
+      livereload: true
   gruntfile:
     files: ['Gruntfile.js']
   livereload:

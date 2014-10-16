@@ -24,6 +24,7 @@ serve:
   - clean:server
   - wiredep
   - concurrent:server
+  - haml
   - libsass
   - autoprefixer
   - connect:livereload
