@@ -3,6 +3,7 @@ default:
   - build
 build:
   - clean:dist
+  - haml
   - wiredep
   - useminPrepare
   - concurrent:dist
@@ -10,7 +11,6 @@ build:
   - concat
   - ngAnnotate
   - copy:dist
-  - haml
   # - cdnify
   - cssmin
   - uglify
@@ -22,9 +22,9 @@ build:
   - connect:dist:keepalive
 serve:
   - clean:server
+  - haml
   - wiredep
   - concurrent:server
-  - haml
   - libsass
   - autoprefixer
   - connect:livereload
