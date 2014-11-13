@@ -5,6 +5,7 @@ build:
   - clean:dist
   - haml
   - wiredep
+  - staticGenerate
   - useminPrepare
   - concurrent:dist
   - autoprefixer
@@ -24,6 +25,7 @@ serve:
   - clean:server
   - haml
   - wiredep
+  - staticGenerate
   - concurrent:server
   - libsass
   - autoprefixer

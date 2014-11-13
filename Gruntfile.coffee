@@ -4,3 +4,4 @@ module.exports = (grunt) ->
     jitGrunt:
       staticMappings:
         useminPrepare: 'grunt-usemin'
+      customTasksDir: 'custom'

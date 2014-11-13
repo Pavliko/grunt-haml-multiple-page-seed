@@ -16,7 +16,7 @@ module.exports =
       livereload: true
   haml:
     files: ['<%= yeoman.app %>/**/*.haml']
-    tasks: ['haml']
+    tasks: ['haml', 'staticGenerate']
     options:
       livereload: true
   gruntfile:

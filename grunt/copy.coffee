@@ -8,7 +8,6 @@ module.exports =
         src: [
           '*.{ico,png,txt}'
           '.htaccess'
-          '*.html'
           'views/{,*/}*.html'
           'images/{,*/}*.{webp}'
           'fonts/*'
@@ -22,6 +21,11 @@ module.exports =
         expand: true
         cwd: 'bower_components/bootstrap/dist'
         src: 'fonts/*'
+        dest: '<%= yeoman.dist %>'
+    ,
+        expand: true
+        cwd: '.tmp'
+        src: '*.html'
         dest: '<%= yeoman.dist %>'
     ]
   styles:
