@@ -11,3 +11,4 @@ module.exports =
       /jquery/
       /bower_components\/bootstrap-sass-official/
     ]
+    ignorePath: /\.\.\//
