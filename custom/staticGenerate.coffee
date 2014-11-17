@@ -24,6 +24,6 @@ module.exports = (grunt) ->
     grunt.file.recurse dir, (abspath, rootdir, subdir, filename) ->
       return unless /\.html$/.test(filename)
       content = grunt.file.read(abspath)
-      newPath = abspath.replace(regexp, distDir)
+      newPath = abspath.replace(regexp, if isDist then distDir else tmpDir)
       console.log 'staticGenerate', newPath
       grunt.file.write newPath, renderContent(content)
