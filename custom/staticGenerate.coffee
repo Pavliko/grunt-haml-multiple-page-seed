@@ -7,23 +7,31 @@ module.exports = (grunt) ->
     dir = @options()['contentsDir'] || "#{appDir}/contents"
     tmpDir = @options()['tmpDir'] || '.tmp'
 
-    [beforeContent, afterContent] = grunt.file
+    layout = grunt.file
       .read(if isDist then "#{distDir}/index.html" else "#{appDir}/index.html")
-      .split('<!-- ##content## -->')
 
-    beforeContent = beforeContent.replace '<!-- ##header## -->',
-      grunt.file.read("#{appDir}/partials/header.html")
-    footer = afterContent.replace '<!-- ##footer## -->',
-      grunt.file.read("#{appDir}/partials/footer.html")
+    header = grunt.file.read("#{appDir}/partials/header.html")
+    footer = grunt.file.read("#{appDir}/partials/footer.html")
 
-    renderContent = (content) ->
-      "#{beforeContent}#{content}#{afterContent}"
+    renderContent = (blocks) ->
+      result = layout
+      for key, value of blocks
+        result = result.replace("<!-- ####{key}### -->", value)
+      result
 
-    regexp = new RegExp(dir)
+
+    pathRegexp = new RegExp(dir)
+    blockNameRegexp = /<!--\s*###([^#]+)###\s*-->/
 
     grunt.file.recurse dir, (abspath, rootdir, subdir, filename) ->
       return unless /\.html$/.test(filename)
-      content = grunt.file.read(abspath)
-      newPath = abspath.replace(regexp, if isDist then distDir else tmpDir)
-      console.log 'staticGenerate', newPath
-      grunt.file.write newPath, renderContent(content)
+      blocks =
+        header: header
+        footer: footer
+
+      for block in grunt.file.read(abspath).split("<!-- ###end### -->")
+        result = blockNameRegexp.exec(block)
+        blocks[result[1]] = block.replace(result[0], '').trim() if result
+
+      newPath = abspath.replace(pathRegexp, if isDist then distDir else tmpDir)
+      grunt.file.write newPath, renderContent(blocks)
