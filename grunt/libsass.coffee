@@ -5,7 +5,7 @@ module.exports =
     files: [
         expand: true
         cwd: '<%= yeoman.app %>/styles'
-        src: '**/*.scss'
+        src: 'main.scss'
         dest: '.tmp/styles'
         ext: '.css'
     ]
