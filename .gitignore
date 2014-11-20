@@ -3,4 +3,5 @@ dist
 .tmp
 .sass-cache
 projects/*/bower_components
+sites
 app
