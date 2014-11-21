@@ -1,11 +1,13 @@
 grunt-haml-multiple-page-seed
 =============================
 
-Yeoman grunt angular app with supporting multiple pages and haml templates.
+Grunt based engine for creating static multiple page sites
 
-To run project do
+To run example project do
 ```
-npm install
+npm install -g rmpm
+rnmp install
+ln -s projects/angular-bootstrap-example app
 bower install
 grunt serve:dist
 ```
