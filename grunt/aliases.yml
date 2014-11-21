@@ -10,6 +10,7 @@ build:
   - concurrent:dist
   - autoprefixer
   - concat
+  - afterConcat
   - copy:dist
   # - cdnify
   - cssmin
@@ -33,3 +34,4 @@ serve:
   - connect:livereload
   - watch
 afterHaml: []
+afterConcat: []
