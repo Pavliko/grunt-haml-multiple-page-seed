@@ -1,5 +1,5 @@
 {
-  "name": "rdm",
+  "name": "grunt-static-ruler",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -23,19 +23,16 @@
     "grunt-haml": "^0.9.0",
     "grunt-libsass": "^0.2.0",
     "grunt-newer": "^0.7.0",
-    "grunt-ng-annotate": "^0.3.0",
     "grunt-svgmin": "^0.4.0",
     "grunt-usemin": "^2.1.1",
     "grunt-wiredep": "^1.7.0",
     "jit-grunt": "^0.9.0",
     "jshint-stylish": "^0.2.0",
     "load-grunt-config": "^0.13.2",
+    "rnpm": "^0.3.1",
     "time-grunt": "^0.3.1"
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }

@@ -5,8 +5,10 @@ module.exports =
         src: [
           '.tmp'
           '<%= yeoman.dist %>/{,*/}*'
-          'app/contents/**/*.html'
+          '<%= yeoman.app %>/contents/**/*.html'
           '!<%= yeoman.dist %>/.git*'
         ]
     ]
+    options:
+      force: true
   server: '.tmp'

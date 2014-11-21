@@ -1,6 +1,6 @@
 module.exports =
   bower:
-    files: ['bower.json']
+    files: ['<%= yeoman.app %>/bower.json']
     tasks: ['wiredep']
     options:
       livereload: true

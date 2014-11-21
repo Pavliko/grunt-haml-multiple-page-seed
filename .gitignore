@@ -2,6 +2,7 @@ node_modules
 dist
 .tmp
 .sass-cache
+.rnpm
 projects/*/bower_components
-sites
 app
+sites

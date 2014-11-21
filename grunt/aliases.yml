@@ -4,6 +4,7 @@ default:
 build:
   - clean:dist
   - haml
+  - afterHaml
   - wiredep
   - useminPrepare
   - concurrent:dist
@@ -23,6 +24,7 @@ build:
 serve:
   - clean:server
   - haml
+  - afterHaml
   - wiredep
   - staticGenerate
   - concurrent:server
@@ -30,3 +32,4 @@ serve:
   - autoprefixer
   - connect:livereload
   - watch
+afterHaml: []
