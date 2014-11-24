@@ -19,6 +19,7 @@ build:
   - usemin
   - htmlmin
   - staticGenerate:dist
+  - sitemap
 'serve:dist':
   - build
   - connect:dist:keepalive
