@@ -4,5 +4,7 @@ dist
 .sass-cache
 .rnpm
 projects/*/bower_components
+projects/*/contents/*.html
+projects/*/partials/*.html
 app
 sites

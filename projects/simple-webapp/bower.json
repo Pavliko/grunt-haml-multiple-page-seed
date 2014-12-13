@@ -1,0 +1,8 @@
+{
+  "name": "simple-webapp",
+  "version": "0.0.0",
+  "appPath": "app",
+  "dependencies": {
+    "es5-shim": "~4.0.3"
+  }
+}
