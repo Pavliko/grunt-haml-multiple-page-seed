@@ -36,3 +36,11 @@ serve:
   - watch
 afterHaml: []
 afterConcat: []
+deploy:
+  - build
+  - exec:pack_dist
+  - exec:copy_dist
+  - exec:unpack_dist
+'deploy:setup':
+  - exec:deploy_create
+  - exec:sync_nginx_conf

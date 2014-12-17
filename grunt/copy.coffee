@@ -11,7 +11,7 @@ module.exports =
           '*.html'
           'views/{,*/}*.html'
           'images/{,*/}*.{webp}'
-          'fonts/*'
+          'fonts/{,*/}*'
         ]
     ,
         expand: true
