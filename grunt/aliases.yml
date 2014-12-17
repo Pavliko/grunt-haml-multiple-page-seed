@@ -25,6 +25,7 @@ build:
   - connect:dist:keepalive
 serve:
   - clean:server
+  - devServe
   - haml
   - afterHaml
   - wiredep
@@ -36,6 +37,7 @@ serve:
   - watch
 afterHaml: []
 afterConcat: []
+devServe: []
 deploy:
   - build
   - exec:pack_dist
