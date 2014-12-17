@@ -18,6 +18,11 @@ module.exports =
         cwd: '.tmp/images'
         dest: '<%= yeoman.dist %>/images'
         src: ['generated/*']
+    ,
+        expand: true
+        cwd: 'app/bower_components/bootstrap-sass-official/assets'
+        src: 'fonts/{,*/}*'
+        dest: '<%= yeoman.dist %>'
     ]
   styles:
     expand: true
