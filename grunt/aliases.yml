@@ -38,6 +38,8 @@ serve:
 afterHaml: []
 afterConcat: []
 devServe: []
+beforeConcurrentServer: []
+beforeConcurrent: []
 deploy:
   - build
   - exec:pack_dist
