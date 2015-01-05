@@ -2,3 +2,5 @@ afterHaml:
   - ngtemplates
 build:
   - ngAnnotate
+serveFinalize:
+  - shell:shotgun_start

@@ -1,0 +1,17 @@
+{
+  "name": "angular-bootstrap-example",
+  "version": "0.0.0",
+  "appPath": "app",
+  "dependencies": {
+    "angular": "latest",
+    "json3": "latest",
+    "es5-shim": "latest",
+    "angular-cookies": "latest",
+    "angular-sanitize": "latest",
+    "angular-animate": "latest",
+    "angular-touch": "latest",
+    "angular-bootstrap": "latest",
+    "bootstrap-sass-official": "latest",
+    "lodash": "latest"
+  }
+}

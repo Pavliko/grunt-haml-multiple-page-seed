@@ -1,8 +1,10 @@
 module.exports =
-  pack_dist:
-    command: 'tar -czf dist.tar.gz dist'
   copy_dist:
-    command: 'scp dist.tar.gz <%= deploy.user %>@<%= deploy.host %>:<%= deploy.deploy_to %>releases/ && rm dist.tar.gz'
+    command: [
+      'tar -czf dist.tar.gz dist'
+      'scp dist.tar.gz <%= deploy.user %>@<%= deploy.host %>:<%= deploy.deploy_to %>releases/'
+      'rm dist.tar.gz'
+    ].join(' && ')
   unpack_dist:
     command: [
       'ssh <%= deploy.user %>@<%= deploy.host %> "cd <%= deploy.deploy_to %>releases/'
@@ -11,8 +13,24 @@ module.exports =
       'echo $(date +%s) > ../deploy.current'
       'mv dist \\\$(cat ../deploy.current)'
       'cd <%= deploy.deploy_to %>'
-      'rm current'
-      'ln -sf releases/\\\$(cat deploy.current) current"'
+      'rm <%= deploy.static_path %>'
+      'mkdir -p <%= deploy.static_path %>'
+      'rm -rf <%= deploy.static_path %>'
+      'ln -sf releases/\\\$(cat deploy.current) <%= deploy.static_path %>"'
+    ].join(' && ')
+  copy_backend:
+    command: [
+      'tar -czf backend.tar.gz backend'
+      'scp backend.tar.gz <%= deploy.user %>@<%= deploy.host %>:<%= deploy.deploy_to %>releases/'
+      'rm backend.tar.gz'
+    ].join(' && ')
+  unpack_backend:
+    command: [
+      'ssh <%= deploy.user %>@<%= deploy.host %> "cd <%= deploy.deploy_to %>releases/'
+      'tar xzf backend.tar.gz'
+      'rm backend.tar.gz'
+      'cp -rf backend/* \\\$(cat ../deploy.current)'
+      'cd <%= deploy.deploy_to %>'
     ].join(' && ')
   sync_nginx_conf:
     command: [
@@ -36,3 +54,7 @@ module.exports =
       'chmod g+rx,u+rwx shared/config'
       'touch shared/config/nginx.conf"'
     ].join(' && ')
+  use:
+    cmd: (project) ->
+      console.log arguments
+      "rm -f app && ln -s ../static-sites/#{project} app"

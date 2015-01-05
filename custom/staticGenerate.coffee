@@ -10,8 +10,8 @@ module.exports = (grunt) ->
     layout = grunt.file
       .read(if isDist then "#{distDir}/index.html" else "#{appDir}/index.html")
 
-    header = grunt.file.read("#{appDir}/partials/header.html")
-    footer = grunt.file.read("#{appDir}/partials/footer.html")
+    header = grunt.file.read("#{appDir}/partials/header.html") if grunt.file.exists("#{appDir}/partials/header.html")
+    footer = grunt.file.read("#{appDir}/partials/footer.html") if grunt.file.exists("#{appDir}/partials/footer.html")
 
     renderContent = (blocks) ->
       result = layout

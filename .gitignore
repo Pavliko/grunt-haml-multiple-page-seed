@@ -6,5 +6,6 @@ dist
 projects/*/bower_components
 projects/*/contents/*.html
 projects/*/partials/*.html
+projects/*/views/*.html
 app
 sites

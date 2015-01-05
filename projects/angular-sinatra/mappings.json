@@ -1,0 +1,4 @@
+{
+  "ngtemplates": "grunt-angular-templates",
+  "shell": "grunt-shell-spawn"
+}

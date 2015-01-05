@@ -33,6 +33,7 @@ serve:
   - concurrent:server
   - libsass
   - autoprefixer
+  - serveFinalize
   - connect:livereload
   - watch
 afterHaml: []
@@ -40,6 +41,7 @@ afterConcat: []
 devServe: []
 beforeConcurrentServer: []
 beforeConcurrent: []
+serveFinalize: []
 deploy:
   - build
   - exec:pack_dist
