@@ -1,11 +1,13 @@
 module.exports =
   options:
-    port: 9090
+    port: 3098
     hostname: 'localhost'
-    livereload: 35729
+    livereload: 35735
   livereload:
     options:
-      open: true
+      open:
+        target: 'http://static.local'
+        appName: 'Google Chrome'
       middleware: (connect) ->
         [
           connect.static('.tmp')
@@ -14,5 +16,7 @@ module.exports =
         ]
   dist:
     options:
-      open: true
+      open:
+        target: 'http://static.local'
+        appName: 'Google Chrome'
       base: '<%= yeoman.dist %>'

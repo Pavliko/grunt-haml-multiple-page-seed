@@ -1,31 +1,27 @@
 module.exports =
+  options:
+    livereload: '<%= connect.options.livereload %>'
   bower:
     files: ['<%= yeoman.app %>/bower.json']
     tasks: ['wiredep']
-    options:
-      livereload: true
   coffee:
     files: ['<%= yeoman.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}']
     tasks: ['newer:coffee:dist']
-    options:
-      livereload: true
   styles:
     files: ['<%= yeoman.app %>/styles/{,*/}*.scss']
     tasks: ['libsass', 'newer:copy:styles', 'autoprefixer']
-    options:
-      livereload: true
   haml:
-    files: ['<%= yeoman.app %>/**/*.haml']
+    files: ['<%= yeoman.app %>/**/*.haml', '<%= yeoman.app %>/index.html']
     tasks: ['haml', 'staticGenerate']
-    options:
-      livereload: true
   gruntfile:
     files: ['Gruntfile.js']
+  public:
+    files: ['<%= yeoman.app %>/public/*']
+    tasks: ['copy:public']
   livereload:
-    options:
-      livereload: '<%= connect.options.livereload %>'
     files: [
       '<%= yeoman.app %>/{,*/}*.html'
+      '!<%= yeoman.app %>/index.html'
       '.tmp/styles/{,*/}*.css'
       '.tmp/scripts/{,*/}*.js'
       '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'

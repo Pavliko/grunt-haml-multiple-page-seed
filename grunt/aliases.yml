@@ -12,6 +12,7 @@ build:
   - concat
   - afterConcat
   - copy:dist
+  - copy:public
   # - cdnify
   - cssmin
   - uglify

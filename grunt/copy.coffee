@@ -24,3 +24,8 @@ module.exports =
     cwd: '<%= yeoman.app %>/styles'
     dest: '.tmp/styles/'
     src: '{,*/}*.css'
+  public:
+    expand: true
+    cwd: '<%= yeoman.app %>'
+    dest: '<%= yeoman.dist %>'
+    src: 'public/**/*'
