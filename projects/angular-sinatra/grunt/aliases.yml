@@ -1,6 +1,6 @@
 afterHaml:
   - ngtemplates
-build:
+afterConcat:
   - ngAnnotate
 serveFinalize:
   - shell:shotgun_start

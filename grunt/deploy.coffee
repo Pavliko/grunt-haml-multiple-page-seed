@@ -3,5 +3,6 @@ module.exports =
   host: 'example.com'
   name: 'sample'
   deploy_to_folder: '/var/www/'
-  deploy_to: '<%= deploy.deploy_to_folder %>/<%= deploy.name %>/'
-  static_path: 'current'
+  deploy_to: '<%= deploy.deploy_to_folder %>/<%= deploy.name %>'
+  static_path: 'current/public'
+  backend: false

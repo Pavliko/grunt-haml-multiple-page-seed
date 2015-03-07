@@ -5,7 +5,6 @@ build:
   - clean:dist
   - haml
   - afterHaml
-  - wiredep
   - useminPrepare
   - concurrent:dist
   - autoprefixer
@@ -16,7 +15,7 @@ build:
   # - cdnify
   - cssmin
   - uglify
-  - filerev
+  # - filerev
   - usemin
   - htmlmin
   - staticGenerate:dist
@@ -45,9 +44,6 @@ beforeConcurrent: []
 serveFinalize: []
 deploy:
   - build
-  - exec:pack_dist
-  - exec:copy_dist
-  - exec:unpack_dist
+  - exec:deploy
 'deploy:setup':
-  - exec:deploy_create
-  - exec:sync_nginx_conf
+  - exec:deploy:setup
