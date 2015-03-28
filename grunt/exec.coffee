@@ -83,7 +83,7 @@ module.exports = (grunt) ->
           )
 
         restart: ->
-          @unicornClt('restart') if @backend
+          @unicornClt('upgrade') if @backend
 
         setup: ->
           @push [
@@ -163,7 +163,7 @@ module.exports = (grunt) ->
           clt.unicornClt(arguments[1])
         when 'sync'
           clt["update#{arguments[1]}"]()
-      
+
       clt.run()
 
   use:
