@@ -9,7 +9,7 @@ module.exports =
     tasks: ['newer:coffee:dist']
   styles:
     files: ['<%= yeoman.app %>/styles/{,*/}*.scss']
-    tasks: ['libsass', 'newer:copy:styles', 'autoprefixer']
+    tasks: ['sass', 'newer:copy:styles', 'autoprefixer']
   haml:
     files: ['<%= yeoman.app %>/**/*.haml', '<%= yeoman.app %>/index.html']
     tasks: ['haml', 'staticGenerate']

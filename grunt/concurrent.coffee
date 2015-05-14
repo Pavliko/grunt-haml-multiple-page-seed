@@ -7,7 +7,7 @@ module.exports =
   dist: [
     'beforeConcurrent'
     'coffee'
-    'libsass'
+    'sass'
     'copy:styles'
     'imagemin'
     'svgmin'
